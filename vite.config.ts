@@ -215,13 +215,26 @@ export default defineConfig(({ mode, command }) => ({
 		// Module preload for faster loading
 		modulePreload: {
 			polyfill: true,
+			resolveDependencies: (filename, deps) => {
+				// Optimize dependency loading order
+				return deps.sort((a, b) => {
+					// Prioritize core dependencies
+					if (a.includes('react') && !b.includes('react')) return -1;
+					if (b.includes('react') && !a.includes('react')) return 1;
+					return 0;
+				});
+			},
 		},
-		// Report compressed size
+		// Report compressed size for accurate bundle analysis
 		reportCompressedSize: true,
-		// Warning limit
-		chunkSizeWarningLimit: 1000,
+		// Warning limit for chunk sizes
+		chunkSizeWarningLimit: 500, // Reduced for better performance
 		// Inline small assets as base64
 		assetsInlineLimit: 4096, // 4KB
+		// Empty outDir before build
+		emptyOutDir: true,
+		// Enable CSS code splitting
+		cssCodeSplit: true,
 
 		// ============================================
 		// ROLLUP CHUNKING - Optimized for caching
