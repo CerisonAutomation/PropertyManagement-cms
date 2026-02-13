@@ -2,21 +2,18 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-	Dialog,
-	DialogContent,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
+  DialogTrigger
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from '@/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
@@ -760,6 +757,9 @@ export default function MediaManager() {
 								})()}
 							{selectedFile?.name}
 						</DialogTitle>
+						<DialogDescription>
+							Preview and manage media file details
+						</DialogDescription>
 					</DialogHeader>
 					{selectedFile && (
 						<div className="space-y-4">
