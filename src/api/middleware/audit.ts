@@ -164,7 +164,7 @@ const shouldLogBody = (req: Request): boolean => {
 };
 
 // Sanitize request body for logging
-const sanitizeRequestBody = (body: any): any => {
+const sanitizeRequestBody = (body: Record<string, unknown>): Record<string, unknown> => {
 	if (!body || typeof body !== 'object') {
 		return body;
 	}
@@ -173,29 +173,29 @@ const sanitizeRequestBody = (body: any): any => {
 
 	// Remove sensitive fields
 	const sensitiveFields = ['password', 'token', 'secret', 'key', 'credit_card'];
-	sensitiveFields.forEach((field) => {
+	for (const field of sensitiveFields) {
 		delete sanitized[field];
-	});
+	}
 
 	// Truncate large strings
-	Object.keys(sanitized).forEach((key) => {
-		if (typeof sanitized[key] === 'string' && sanitized[key].length > 500) {
-			sanitized[key] = sanitized[key].substring(0, 500) + '...';
+	for (const key of Object.keys(sanitized)) {
+		if (typeof sanitized[key] === 'string' && (sanitized[key] as string).length > 500) {
+			sanitized[key] = `${(sanitized[key] as string).substring(0, 500)}...`;
 		}
-	});
+	}
 
 	return sanitized;
 };
 
 // Sanitize headers for logging
-const sanitizeHeaders = (headers: any): any => {
+const sanitizeHeaders = (headers: Record<string, unknown>): Record<string, unknown> => {
 	const sanitized = { ...headers };
 
 	// Remove sensitive headers
 	const sensitiveHeaders = ['authorization', 'cookie', 'x-api-key'];
-	sensitiveHeaders.forEach((header) => {
+	for (const header of sensitiveHeaders) {
 		delete sanitized[header];
-	});
+	}
 
 	return sanitized;
 };

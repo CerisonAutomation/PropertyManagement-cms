@@ -83,7 +83,9 @@ export default function Admin() {
 			<div className="min-h-screen bg-background flex items-center justify-center">
 				<div className="text-center">
 					<h1 className="text-2xl font-bold mb-4">Access Denied</h1>
-					<p className="text-muted-foreground mb-6">You don't have permission to access the admin panel.</p>
+					<p className="text-muted-foreground mb-6">
+						You don't have permission to access the admin panel.
+					</p>
 					<Button onClick={() => supabase.auth.signOut()}>Sign Out</Button>
 				</div>
 			</div>

@@ -2,10 +2,10 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { useCmsPage } from '@/hooks/use-cms';
+import DOMPurify from 'isomorphic-dompurify';
 import { Home } from 'lucide-react';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import DOMPurify from 'isomorphic-dompurify';
 
 export default function CmsPage() {
 	const { slug } = useParams<{ slug: string }>();
@@ -142,7 +142,9 @@ export default function CmsPage() {
 						</header>
 
 						<div className="prose prose-lg max-w-none">
-							{content.body && <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.body) }} />}
+							{content.body && (
+								<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.body) }} />
+							)}
 						</div>
 					</article>
 				);
@@ -190,7 +192,9 @@ export default function CmsPage() {
 							{page.title}
 						</h1>
 						<div className="prose prose-lg max-w-none">
-							{content.body && <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.body) }} />}
+							{content.body && (
+								<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.body) }} />
+							)}
 							{content.sections?.map((section: any, index: number) => (
 								<section key={index} className="mb-12">
 									<h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
