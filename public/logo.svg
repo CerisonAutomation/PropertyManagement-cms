@@ -1,0 +1,24 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="16" fill="#1a1a1a"/>
+  
+  <!-- Building Icon -->
+  <rect x="8" y="10" width="16" height="12" fill="#D4AF37" rx="1"/>
+  
+  <!-- Windows -->
+  <rect x="10" y="12" width="2" height="2" fill="#1a1a1a"/>
+  <rect x="14" y="12" width="2" height="2" fill="#1a1a1a"/>
+  <rect x="18" y="12" width="2" height="2" fill="#1a1a1a"/>
+  <rect x="10" y="16" width="2" height="2" fill="#1a1a1a"/>
+  <rect x="14" y="16" width="2" height="2" fill="#1a1a1a"/>
+  <rect x="18" y="16" width="2" height="2" fill="#1a1a1a"/>
+  
+  <!-- Door -->
+  <rect x="13" y="18" width="6" height="4" fill="#1a1a1a" rx="0.5"/>
+  
+  <!-- Roof -->
+  <polygon points="6,10 16,6 26,10" fill="#D4AF37"/>
+  
+  <!-- CP Lettering -->
+  <text x="16" y="28" font-family="Arial, sans-serif" font-size="4" font-weight="bold" fill="#D4AF37" text-anchor="middle">CP</text>
+</svg>

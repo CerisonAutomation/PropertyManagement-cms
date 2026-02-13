@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@300;400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 220 20% 4%;
+		--foreground: 40 20% 95%;
+
+		--card: 220 18% 7%;
+		--card-foreground: 40 20% 95%;
+
+		--popover: 220 18% 7%;
+		--popover-foreground: 40 20% 95%;
+
+		--primary: 42 76% 55%;
+		--primary-foreground: 220 20% 4%;
+
+		--secondary: 220 15% 12%;
+		--secondary-foreground: 40 20% 90%;
+
+		--muted: 220 15% 12%;
+		--muted-foreground: 220 10% 55%;
+
+		--accent: 220 15% 15%;
+		--accent-foreground: 40 20% 95%;
+
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 40 20% 95%;
+
+		--border: 220 15% 15%;
+		--input: 220 15% 15%;
+		--ring: 42 76% 55%;
+
+		--radius: 0.5rem;
+
+		--luxury-gold: 42 76% 55%;
+		--luxury-gold-light: 42 76% 65%;
+		--luxury-gold-dark: 42 76% 40%;
+
+		--gradient-hero-overlay: linear-gradient(
+			180deg,
+			hsla(220, 20%, 4%, 0.3) 0%,
+			hsla(220, 20%, 4%, 0.6) 40%,
+			hsla(220, 20%, 4%, 0.92) 100%
+		);
+		--gradient-gold: linear-gradient(135deg, hsl(42, 76%, 55%), hsl(42, 76%, 70%));
+		--shadow-gold: 0 8px 32px -8px hsla(42, 76%, 55%, 0.25);
+		--surface-overlay: hsla(220, 20%, 4%, 0.85);
+
+		--vibrant-blue: 59 130% 246%;
+		--vibrant-purple: 147 51% 234%;
+		--vibrant-pink: 234 67% 53%;
+		--vibrant-orange: 251 146% 60%;
+		--vibrant-teal: 94 234% 212%;
+		--vibrant-green: 134 239% 172%;
+		--gradient-rainbow: linear-gradient(
+			135deg,
+			hsl(0, 100%, 50%),
+			hsl(60, 100%, 50%),
+			hsl(120, 100%, 50%),
+			hsl(180, 100%, 50%),
+			hsl(240, 100%, 50%),
+			hsl(300, 100%, 50%)
+		);
+		--gradient-sunset: linear-gradient(135deg, hsl(25, 100%, 50%), hsl(340, 100%, 30%));
+		--gradient-ocean: linear-gradient(135deg, hsl(200, 100%, 50%), hsl(220, 100%, 40%));
+		--gradient-forest: linear-gradient(135deg, hsl(120, 100%, 30%), hsl(90, 100%, 40%));
+		--gradient-coral: linear-gradient(135deg, hsl(340, 100%, 40%), hsl(20, 100%, 50%));
+		--gradient-lavender: linear-gradient(135deg, hsl(270, 100%, 40%), hsl(230, 100%, 50%));
+
+		--sidebar-background: 220 18% 7%;
+		--sidebar-foreground: 40 20% 95%;
+		--sidebar-primary: 42 76% 55%;
+		--sidebar-primary-foreground: 220 20% 4%;
+		--sidebar-accent: 220 15% 12%;
+		--sidebar-accent-foreground: 40 20% 95%;
+		--sidebar-border: 220 15% 15%;
+		--sidebar-ring: 42 76% 55%;
+	}
+}
+
+/* Colorful text enhancements */
+.text-rainbow {
+	background: var(--gradient-rainbow);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	padding: 0.3em 0.6em;
+	animation: rainbow-shift 3s ease-in-out infinite;
+}
+
+.text-ocean {
+	background: var(--gradient-ocean);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 600;
+	letter-spacing: 0.025em;
+	padding: 0.3em 0.6em;
+	animation: wave-shift 4s ease-in-out infinite;
+}
+
+.text-forest {
+	background: var(--gradient-forest);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 600;
+	letter-spacing: 0.025em;
+	padding: 0.3em 0.6em;
+	animation: forest-pulse 3s ease-in-out infinite;
+}
+
+.text-coral {
+	background: var(--gradient-coral);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 600;
+	letter-spacing: 0.025em;
+	padding: 0.3em 0.6em;
+	animation: coral-glow 3s ease-in-out infinite alternate;
+}
+
+.text-lavender {
+	background: var(--gradient-lavender);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 600;
+	letter-spacing: 0.025em;
+	padding: 0.3em 0.6em;
+	animation: lavender-float 4s ease-in-out infinite;
+}
+
+/* Fix for block color overlay issue */
+.fix-block-overlay {
+	position: relative;
+	z-index: 10;
+}
+
+.fix-block-overlay::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.1);
+	z-index: -1;
+}
+
+/* Animations */
+@keyframes rainbow-shift {
+	0%,
+	100% {
+		background-position: 0% 0;
+	}
+	25%,
+	100% {
+		background-position: 25% 0;
+	}
+	50%,
+	100% {
+		background-position: 50% 0;
+	}
+	75%,
+	100% {
+		background-position: 75% 0;
+	}
+	100%,
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+@keyframes wave-shift {
+	0%,
+	50% {
+		transform: translateY(0px);
+	}
+	50%,
+	100% {
+		transform: translateY(-3px);
+	}
+}
+
+@keyframes forest-pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50%,
+	100% {
+		opacity: 0.7;
+	}
+}
+
+@keyframes coral-glow {
+	0%,
+	100% {
+		box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+	}
+	50%,
+	100% {
+		box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+	}
+}
+
+@keyframes lavender-float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50%,
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground antialiased;
+		font-family: "Inter", system-ui, sans-serif;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	/* Apply luxury fonts to main headings */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Source Serif Pro", "Playfair Display", serif;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+	}
+
+	/* Enhanced property management styling */
+	.property-management {
+		font-family: "Montserrat", "Inter", sans-serif;
+		font-weight: 500;
+		letter-spacing: 0.005em;
+		text-transform: uppercase;
+	}
+
+	/* Luxury text enhancements */
+	.luxury-text {
+		background: var(--gradient-gold);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		padding: 0.25em 0.5em;
+	}
+
+	/* Luxury typography for headings */
+	.font-serif {
+		font-family: "Source Serif Pro", "Playfair Display", serif;
+		font-weight: 300;
+		letter-spacing: 0.01em;
+		line-height: 1.2;
+	}
+	.gold-text {
+		background: var(--gradient-gold);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	}
+}
+
+@layer utilities {
+	.font-script {
+		font-family: "Playfair Display", serif;
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	.font-serif {
+		font-family: "Playfair Display", serif;
+	}
+
+	.gold-text {
+		background: var(--gradient-gold);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.glass-surface {
+		@apply bg-card/80 backdrop-blur-xl border border-border/50;
+	}
+
+	.section-container {
+		@apply max-w-6xl mx-auto px-5 sm:px-8;
+	}
+
+	.micro-type {
+		@apply text-xs font-semibold uppercase tracking-[0.25em];
+	}
+
+	/* Scroll snap for desktop full-screen sections */
+	@media (min-width: 768px) {
+		.snap-container {
+			height: 100vh;
+			overflow-y: auto;
+			scroll-snap-type: y mandatory;
+		}
+		.snap-section {
+			scroll-snap-align: start;
+			scroll-snap-stop: always;
+		}
+	}
+
+	/* Parallax background layers */
+	.parallax-bg {
+		will-change: transform;
+		transform: translateZ(0);
+	}
+}
