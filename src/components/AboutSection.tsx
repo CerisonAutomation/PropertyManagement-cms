@@ -31,9 +31,9 @@ export default function AboutSection({ onOpenWizard }: AboutSectionProps) {
 						viewport={{ once: true }}
 						className="text-center mb-12"
 					>
-						<p className="micro-type text-primary mb-3">About Us</p>
-						<h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">
-							About Christiano <span className="gold-text">Property Management</span>
+						<p className="micro-type text-primary font-bold mb-3">About Us</p>
+						<h2 className="font-serif text-3xl sm:text-4xl font-black text-foreground">
+							About Christiano <span className="gold-text font-bold">Property Management</span>
 						</h2>
 					</motion.div>
 				</motion.div>

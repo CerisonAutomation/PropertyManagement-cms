@@ -15,10 +15,10 @@ export default function CTABanner({ onOpenWizard }: CTABannerProps) {
 					viewport={{ once: true }}
 					className="max-w-2xl mx-auto text-center"
 				>
-					<h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-						Ready to maximise your <span className="gold-text">rental income</span>?
+					<h2 className="font-serif text-3xl sm:text-4xl font-black text-foreground mb-4">
+						Ready to maximise your <span className="gold-text font-bold">rental income</span>?
 					</h2>
-					<p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+					<p className="text-muted-foreground font-semibold mb-8 max-w-lg mx-auto">
 						Get a free property assessment and discover how much more your Malta property could earn
 						with professional management.
 					</p>

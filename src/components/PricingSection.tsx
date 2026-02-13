@@ -148,10 +148,10 @@ export default function PricingSection({ onOpenWizard }: PricingSectionProps) {
 							<span>Transparent Pricing</span>
 						</motion.div>
 
-						<h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground">
-							Simple, <span className="gold-text">transparent</span> pricing
+						<h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-foreground">
+							Simple, <span className="gold-text font-bold">transparent</span> pricing
 						</h2>
-						<p className="text-muted-foreground mt-4 max-w-md mx-auto text-lg">
+						<p className="text-muted-foreground font-semibold mt-4 max-w-md mx-auto text-lg">
 							No setup fees. No hidden costs. You only pay when you earn.
 						</p>
 					</motion.div>

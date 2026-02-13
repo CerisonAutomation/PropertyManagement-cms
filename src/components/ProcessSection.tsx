@@ -41,9 +41,9 @@ export default function ProcessSection({ onOpenWizard }: ProcessSectionProps) {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 					>
-						<p className="micro-type text-primary mb-3">How It Works</p>
-						<h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">
-							Three steps to <span className="gold-text">stress-free</span> income
+						<p className="micro-type text-primary font-bold mb-3">How It Works</p>
+						<h2 className="font-serif text-3xl sm:text-4xl font-black text-foreground">
+							Three steps to <span className="gold-text font-bold">stress-free</span> income
 						</h2>
 					</motion.div>
 				</motion.div>

@@ -1,6 +1,5 @@
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import type React from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 // Enhanced theme configuration with enterprise themes
 export const enterpriseThemes = {

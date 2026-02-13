@@ -175,11 +175,11 @@ export default function PortfolioSection() {
 						transition={{ duration: 0.6 }}
 						className="text-center mb-12"
 					>
-						<p className="micro-type text-primary mb-3">Portfolio</p>
-						<h2 className="font-serif text-4xl sm:text-5xl font-semibold text-foreground">
-							Properties we <span className="gold-text">manage</span>
+						<p className="micro-type text-primary font-bold mb-3">Portfolio</p>
+						<h2 className="font-serif text-4xl sm:text-5xl font-black text-foreground">
+							Properties we <span className="gold-text font-bold">manage</span>
 						</h2>
-						<p className="text-muted-foreground mt-4 max-w-lg mx-auto">
+						<p className="text-muted-foreground font-medium mt-4 max-w-lg mx-auto">
 							Hand-picked luxury properties across Malta & Gozo, each earning exceptional returns
 							for their owners.
 						</p>

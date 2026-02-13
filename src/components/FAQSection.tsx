@@ -65,9 +65,9 @@ export default function FAQSection() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<p className="micro-type text-primary mb-3">FAQ</p>
-						<h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">
-							Common <span className="gold-text">questions</span>
+						<p className="micro-type text-primary font-bold mb-3">FAQ</p>
+						<h2 className="font-serif text-3xl sm:text-4xl font-black text-foreground">
+							Common <span className="gold-text font-bold">questions</span>
 						</h2>
 					</motion.div>
 				</motion.div>
