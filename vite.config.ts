@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 // 🚀 EXPERT CONFIG - Every millisecond matters
-export default defineConfig(({ mode, command }) => ({
+export default defineConfig(({ mode }) => ({
 	// ============================================
 	// SERVER CONFIGURATION
 	// ============================================
@@ -61,16 +61,6 @@ export default defineConfig(({ mode, command }) => ({
 			plugins: [
 				// Auto-generate component metadata for debugging
 			],
-			// Babel-like transforms (optional - SWC is faster)
-			parserConfig: (id) => {
-				// Skip node_modules for faster parsing
-				if (id.includes('node_modules')) {
-					return {
-						syntax: 'ecmascript',
-						jsx: true,
-					};
-				}
-			},
 		}),
 
 		// ============================================
@@ -215,7 +205,7 @@ export default defineConfig(({ mode, command }) => ({
 		// Module preload for faster loading
 		modulePreload: {
 			polyfill: true,
-			resolveDependencies: (filename, deps) => {
+			resolveDependencies: (_filename, deps) => {
 				// Optimize dependency loading order
 				return deps.sort((a, b) => {
 					// Prioritize core dependencies
@@ -233,8 +223,6 @@ export default defineConfig(({ mode, command }) => ({
 		assetsInlineLimit: 4096, // 4KB
 		// Empty outDir before build
 		emptyOutDir: true,
-		// Enable CSS code splitting
-		cssCodeSplit: true,
 
 		// ============================================
 		// ROLLUP CHUNKING - Optimized for caching
@@ -285,7 +273,7 @@ export default defineConfig(({ mode, command }) => ({
 				entryFileNames: 'js/[name]-[hash].js',
 				assetFileNames: (assetInfo) => {
 					const info = assetInfo.name?.split('.') || [];
-					const ext = info[info.length - 1];
+					const ext = info[info.length - 1] || '';
 
 					// Separate image formats
 					if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'avif', 'svg'].includes(ext)) {
@@ -369,7 +357,7 @@ export default defineConfig(({ mode, command }) => ({
 	// ENVIRONMENT VARIABLES
 	// ==========================================
 	define: {
-		__APP_VERSION__: JSON.stringify(process.env.npm_package_version),
+		__APP_VERSION__: JSON.stringify(process.env['npm_package_version'] || '2.0.0'),
 		__BUILD_TIME__: JSON.stringify(new Date().toISOString()),
 		__VITE_MODE__: JSON.stringify(mode),
 		// Disable development warnings in production
